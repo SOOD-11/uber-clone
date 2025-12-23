@@ -9,7 +9,7 @@ const initializeSocket = (server) => {
         cors: {
 
 
-            origin: "http://localhost:5173" ,// your frontend URL
+            origin: "http://localhost:5173",// your frontend URL
             methods: ["GET", "POST"],
             credentials: true
         }
@@ -38,58 +38,58 @@ const initializeSocket = (server) => {
                 })
             }
         })
-   
-
-    /// method to find the  real time location of the captain using socket  and keep on storing in the databse 
-    socket.on('update-captain-location', async (data) => {
-        const { userId, location } = data;
-console.log(location);
-        // validation to check data 
-
-        if (!userId || !location || !location.lng || !location.ltd) {
-
-            return socket.emit('error', { message: " invalid location  of captain" });
 
 
-        }
-await Driver.findByIdAndUpdate(
+        /// method to find the  real time location of the captain using socket  and keep on storing in the databse 
+        socket.on('update-captain-location', async (data) => {
+            const { userId, location } = data;
+            console.log(location);
+            // validation to check data 
 
-userId,{
-location:{
-ltd:location.ltd,
-lng:location.lng
+            if (!userId || !location || !location.lng || !location.ltd) {
 
-
-}
-
-
-}
+                return socket.emit('error', { message: " invalid location  of captain" });
 
 
-)
+            }
+            await Driver.findByIdAndUpdate(
 
-    });
+                userId, {
+                location: {
+                    ltd: location.ltd,
+                    lng: location.lng
 
 
+                }
+
+
+            }
+
+
+            )
+
+        });
 
 
 
-    socket.on('disconnect', () => {
 
-        console.log(" Client disconnected :", socket.id)
 
+        socket.on('disconnect', () => {
+
+            console.log(" Client disconnected :", socket.id)
+
+
+
+        })
 
 
     })
-
-
- })
 
 }
 
 
 function sendMessageToSocketId(socketId, messageobject) {
-console.log(messageobject);
+    
     if (io) {
         io.to(socketId).emit(messageobject.event, messageobject.newRequest);
 

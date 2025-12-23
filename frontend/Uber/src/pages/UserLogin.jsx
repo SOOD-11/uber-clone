@@ -33,10 +33,7 @@ console.log(data);
       data,
       {
         withCredentials: true,
-        headers: {
-          'Content-Type': 'application/json', // optional, usually auto-set
-          'Accept': 'application/json',       // ensure expecting JSON response
-        },
+       
       }
     );
 setUser(response.data);

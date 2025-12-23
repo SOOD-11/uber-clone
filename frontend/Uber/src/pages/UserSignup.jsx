@@ -19,7 +19,7 @@ const UserSignup = () => {
     resetErrors,
   } = useFieldErrors();
 
-  const [user, setUser] = useContext(UserDataContext);
+  const {user, setUser} = useContext(UserDataContext);
   const navigate = useNavigate();
 
   const handleChange = (e) => {

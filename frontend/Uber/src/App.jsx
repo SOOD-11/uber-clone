@@ -15,7 +15,6 @@ import  GoingForPickup  from './components/CaptainComponents/GoingForPickup';
 import ConfirmRidePanel from './pages/ConfirmRidePanel';
 import GoingToDropLocation from './pages/GoingToDropLocation';
 import EndRide  from './pages/EndRide';
-import Driverlogout from './pages/driverlogout';
 const App = () => {
   return (
 
@@ -40,11 +39,7 @@ const App = () => {
       <Logout/>
       </ProtectedRoutesWrapper>}
       />
-      <Route path='/captain-logout' element={
-      <ProtectedRoutesWrapper >
-<Driverlogout/>
-      </ProtectedRoutesWrapper>}
-      />
+    
       <Route path='/captain-home' element={
         <ProtectedRoutesWrapper >
           <Captain_home>
