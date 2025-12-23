@@ -10,7 +10,7 @@ import RideSelectionPanel from "../components/RideSelectionPanel";
 import ConfirmedRidePanel from "../components/ConfirmedRidePanel";
 import "remixicon/fonts/remixicon.css";
 import WaitingForRider from "../components/WaitingForRider";
-import DriverFound from "../components/Driverfound";
+import DriverFound from "../components/DriverFound";
 import axiosInstance from "../utils/axiosInstance";
 import { useRideContext } from "../contexts/RIdeFormContext";
 import ApiError from "../../../../backend/utilities/ApiError";
