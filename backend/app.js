@@ -11,8 +11,7 @@ import rideRoute  from "./routes/ride.route.js";
 const app=express();
 configDotenv();
 const allowedOrigins = [
-  'http://localhost:5173',
-  'https://ffv5205q-5173.inc1.devtunnels.ms'
+  'https://uber-clone-zeta-lilac.vercel.app'
 ];
 
 app.use(cors({
