@@ -5,7 +5,8 @@ const axiosInstance = axios.create({
   baseURL: `${import.meta.env.VITE_BASE_URL}`,
   withCredentials: true  // Keep this for sending cookies with every request
 });
-
+console.log(import.meta.env.VITE_BASE_URL);
+console.log(axiosInstance.baseURL);
 // Request Interceptor - Add Access Token
 axiosInstance.interceptors.request.use(
   (config) => {
