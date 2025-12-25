@@ -44,6 +44,8 @@ setUser(response.data);
       setPassword('');
       navigate('/home');
     } catch (error) {
+        console.log("STATUS:", error?.response?.status);
+  console.log("DATA:", error?.response?.data);
       if (error.response) {
         const { status, data } = error.response;
         if (status === 400 && Array.isArray(data.errors)) {
